@@ -1,0 +1,24 @@
+# Laboratorio Oracle Data Pump - Oracle Database 23ai Free
+# Senhas abaixo sao apenas para ambiente de laboratorio local.
+# Nenhuma porta e exposta no seu computador: os scripts acessam o banco
+# por dentro do container, entao nao ha conflito com outros Oracle/containers.
+# Se quiser conectar pelo SQL Developer/DBeaver, descomente "ports" com uma porta livre.
+services:
+  oracle:
+    image: gvenzl/oracle-free:23
+    container_name: oracle-lab-datapump
+    # ports:
+    #   - "1531:1521"
+    environment:
+      ORACLE_PASSWORD: "Oracle2026"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 15s
+      timeout: 10s
+      retries: 60
+      start_period: 60s
+
+volumes:
+  oracle-data:

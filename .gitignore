@@ -1,0 +1,5 @@
+# dumps nunca devem ir para o repositorio
+*.dmp
+# logs e saidas de cada execucao (versione apenas os que quiser mostrar)
+evidencias/*
+!evidencias/.gitkeep
