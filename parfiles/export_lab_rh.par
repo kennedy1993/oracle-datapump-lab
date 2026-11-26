@@ -1,0 +1,5 @@
+directory=DP_DIR
+dumpfile=lab_rh.dmp
+logfile=exp_lab_rh.log
+schemas=LAB_RH
+reuse_dumpfiles=YES
